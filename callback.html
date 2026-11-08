@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Returning to AI Glasses</title>
+<body>
+<p>Returning to AI Glasses…</p>
+<script>
+const query = new URLSearchParams(location.search);
+const target = new URL("http://192.168.4.1/");
+for (const key of ["code", "state", "error", "error_description"]) {
+  const value = query.get(key);
+  if (value) target.searchParams.set(key, value);
+}
+location.replace(target.href);
+</script>
+</body>
+</html>
